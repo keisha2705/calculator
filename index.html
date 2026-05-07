@@ -14,12 +14,12 @@
         </div> -->
 <input id="display" readonly placeholder="0"> 
         <div class="buttons">
-
+           
             <button class="symbol" onclick="clearDisplay('C')">C</button>
             <button class="symbol"  onclick="appendToDisplay('/')">/</button>
             <button class="symbol"  onclick="appendToDisplay('*')">*</button>
-            <button class="symbol"  onclick="clearDisplay('Del')">Del</button>
-
+            <button class="symbol"  onclick="deleteToDisplay('Del')">Del</button>
+     
             <button class="btn"  onclick="appendToDisplay('7')">7</button>
             <button class="btn"  onclick="appendToDisplay('8')">8</button>
             <button class="btn"  onclick="appendToDisplay('9')">9</button>
@@ -34,9 +34,11 @@
             <button class="btn" onclick="appendToDisplay('2')">2</button>
             <button class="btn" onclick="appendToDisplay('3')">3</button>
             <button class=" equal" onclick="calculate()">=</button>
+            
 
             <button class="btn zero" onclick="appendToDisplay('0')">0</button>
             <button class="btn" onclick="appendToDisplay('.')">.</button>
+            
         </div>
     </div>
     <script src="main.js"></script>

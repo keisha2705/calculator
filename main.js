@@ -18,4 +18,10 @@ try{
 catch(error){
     display.value = "Error";
 }
+
+function deleteDisplay(){
+  display.value = ""
+}
+
+
 }
