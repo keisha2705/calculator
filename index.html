@@ -1,47 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
 
     <div class="calculator">
-      
-        <!-- <div class="screen">
-        </div> -->
-<input id="display" readonly placeholder="0"> 
+
+        <!-- Display Screen -->
+        <input id="display" readonly placeholder="0">
+        
         <div class="buttons">
-           
-            <button class="symbol" onclick="clearDisplay('C')">C</button>
-            <button class="symbol"  onclick="appendToDisplay('/')">/</button>
-            <button class="symbol"  onclick="appendToDisplay('*')">*</button>
-            <button class="symbol"  onclick="deleteToDisplay('Del')">Del</button>
-     
-            <button class="btn"  onclick="appendToDisplay('7')">7</button>
-            <button class="btn"  onclick="appendToDisplay('8')">8</button>
-            <button class="btn"  onclick="appendToDisplay('9')">9</button>
-            <button class="symbol" onclick="appendToDisplay('-')">-</button>
 
-            <button class="btn" onclick="appendToDisplay('4')">4</button>
-            <button class="btn" onclick="appendToDisplay('5')">5</button>
-            <button class="btn" onclick="appendToDisplay('6')">6</button>
-            <button class="symbol" onclick="appendToDisplay('+')">+</button>
+            <!-- Row 1: Controls & Advanced Operations -->
+            <button class="symbol" onclick="clearDisplay()">C</button>
+            <button class="symbol" onclick="setOperator('divide')">/</button>
+            <button class="symbol" onclick="setOperator('multiply')">*</button>
+            <button class="symbol" onclick="deleteLastDigit()">Del</button>
+            <button class="symbol" onclick="runSquareRoot()">&radic;x</button>
+            <button class="symbol" onclick="runSquare()">x<sup>2</sup></button>
+            <button class="symbol" onclick="setOperator('exponent')">x<sup>y</sup></button>
 
-            <button class="btn" onclick="appendToDisplay('1')">1</button>
-            <button class="btn" onclick="appendToDisplay('2')">2</button>
-            <button class="btn" onclick="appendToDisplay('3')">3</button>
-            <button class=" equal" onclick="calculate()">=</button>
-            
+            <!-- Row 2: Numbers 7-9 & Subtraction -->
+            <!-- FIXED: Changed 'SU' to 'setOperator' to match standard function naming -->
+            <button class="symbol" onclick="setOperator('subtract')">-</button>
+            <button class="btn" onclick="appendNumber('7')">7</button>
+            <button class="btn" onclick="appendNumber('8')">8</button>
+            <button class="btn" onclick="appendNumber('9')">9</button>
 
-            <button class="btn zero" onclick="appendToDisplay('0')">0</button>
-            <button class="btn" onclick="appendToDisplay('.')">.</button>
-            
+            <!-- Row 3: Numbers 4-6 & Addition -->
+            <button class="symbol" onclick="setOperator('add')">+</button>
+            <button class="btn" onclick="appendNumber('4')">4</button>
+            <button class="btn" onclick="appendNumber('5')">5</button>
+            <button class="btn" onclick="appendNumber('6')">6</button>
+
+            <!-- Row 4: Numbers 1-3 & Equals -->
+            <button class="equal" onclick="calculate()">=</button>
+            <button class="btn" onclick="appendNumber('1')">1</button>
+            <button class="btn" onclick="appendNumber('2')">2</button>
+            <button class="btn" onclick="appendNumber('3')">3</button>
+
+            <!-- Row 5: Zero & Decimal -->
+            <button class="btn zero" onclick="appendNumber('0')">0</button>
+            <button class="btn" onclick="appendNumber('.')">.</button>
+
         </div>
     </div>
-    <script src="main.js"></script>
     
+    <script src="main.js"></script>
 </body>
 </html>
